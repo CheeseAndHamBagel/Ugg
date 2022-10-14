@@ -17,7 +17,7 @@ public class UggRock{
     private UggRockType rockType;
 
     public UggRock (UggRockSize newRockSize, UggRockType newRockType){
-        rocksize = newRockSize;
+        rockSize = newRockSize;
         rockType = newRockType;
     }
 
@@ -58,7 +58,7 @@ public class UggRock{
     }
 
     public int getVal (){
-        int value = CalcStateValue(self.rockSize, self.rockType);
+        int value = CalcStateValue(rockSize, rockType);
         return value; 
     }
 
