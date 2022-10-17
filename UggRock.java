@@ -61,8 +61,39 @@ public class UggRock{
         int value = CalcStateValue(rockSize, rockType);
         return value; 
     }
+
+    public String getSize(){
+        switch (this.rockSize) {
+            case bigun:
+            return ("bigun");
+            case quite_bigun:
+            return ("quite-bigun");
+            case not_so_bigun:
+            return ("not_so_bigun");
+            default:
+            return ("getSize error");
+
+        }
+    }
+
+    public String getType(){
+        switch (this.rockType) {
+            case speckily:
+            return ("bigun");
+            case ouchy_black:
+            return ("quite-bigun");
+            case floaty:
+            return ("not_so_bigun");
+            case hot_hot_hot:
+            return ("hot_hot_hot");
+            default:
+            return ("getType error");
+        }
+    }
 public static void main(String[] args){
     UggRock Terry = new UggRock (UggRockSize.bigun, UggRockType.hot_hot_hot);
     System.out.println(Terry.getVal());
+    System.out.println(Terry.getSize());
+    System.out.println(Terry.getType());
 }
 }
