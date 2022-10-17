@@ -17,8 +17,8 @@ public class UggRock{
     private UggRockType rockType;
 
     public UggRock (UggRockSize newRockSize, UggRockType newRockType){
-        rockSize = newRockSize;
-        rockType = newRockType;
+        this.rockSize = newRockSize;
+        this.rockType = newRockType;
     }
 
     public int CalcStateValue (UggRockSize rockSize, UggRockType rockType) {
@@ -55,13 +55,14 @@ public class UggRock{
         break;
         }
         return workingStateValue;
-    }
-
+        }
+    
     public int getVal (){
         int value = CalcStateValue(rockSize, rockType);
         return value; 
     }
-
-UggRock Terry = new UggRock (UggRockType.speckily, UggRockSize.quite_bigun);
-
+public static void main(String[] args){
+    UggRock Terry = new UggRock (UggRockSize.bigun, UggRockType.hot_hot_hot);
+    System.out.println(Terry.getVal());
+}
 }
