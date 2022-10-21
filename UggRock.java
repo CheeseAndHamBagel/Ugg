@@ -5,10 +5,19 @@ enum UggRockSize {
 }
 
 enum UggRockType {
-    speckily,
-    ouchy_black,
-    floaty,
-    hot_hot_hot,
+    speckily (Short.parseShort("7")),
+    ouchy_black (Short.parseShort("20")),
+    floaty (Short.parseShort("2")),
+    hot_hot_hot (Short.parseShort("15"));
+
+    private final short multiplierValue;
+
+    private UggRockType (short multiplierValue) {
+        this.multiplierValue = multiplierValue;
+    }
+    public Short getMultiplierValue() {
+        return multiplierValue;
+    }
 }
 
 
