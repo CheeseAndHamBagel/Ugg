@@ -43,27 +43,7 @@ public class UggRock{
     }
 
    public int CalcStateValue (UggRockSize rockSize, UggRockType rockType) {
-        int workingStateValue = 1;
-
-        workingStateValue *= rockSize.getMultiplierValue().intValue();
-
-        switch (rockType) {
-        case speckily:
-        workingStateValue *= 7;
-        break;
-        
-        case ouchy_black:
-        workingStateValue *= 20;
-        break;
-        
-        case floaty:
-        workingStateValue *= 2;
-        break;
-
-        case hot_hot_hot:
-        workingStateValue *= 15;
-        break;
-        }
+        int workingStateValue = rockSize.getMultiplierValue().intValue() * rockType.getMultiplierValue.intValue();
         return workingStateValue;
         }
     
