@@ -1,7 +1,19 @@
 enum UggRockSize {
-    bigun,
-    quite_bigun,
-    not_so_bigun,
+   // enum constants calling the enum constructors 
+    bigun(Short.parseShort("5")),
+    quite_bigun(Short.parseShort("3")),
+    not_so_bigun(Short.parseShort("1"));
+
+   private final short multiplierValue;
+
+   // private enum constructor
+   private UggRockSize(Short multiplierValue) {
+      this.multiplierValue = multiplierValue;
+   }
+
+    public Short getMultiplierValue() {
+      return multiplierValue;
+   }
 }
 
 enum UggRockType {
@@ -30,37 +42,26 @@ public class UggRock{
         this.rockType = newRockType;
     }
 
-    public int CalcStateValue (UggRockSize rockSize, UggRockType rockType) {
-        int workingStateValue = 0;
-        switch (rockSize) {
-        case bigun:
-        workingStateValue += 5;
-        break;
-        
-        case quite_bigun:
-        workingStateValue += 3;
-        break;
-        
-        case not_so_bigun:
-        workingStateValue += 1;
-        break;
-        }
+   public int CalcStateValue (UggRockSize rockSize, UggRockType rockType) {
+        int workingStateValue = 1;
+
+        workingStateValue *= rockSize.getMultiplierValue().intValue();
 
         switch (rockType) {
         case speckily:
-        workingStateValue += 7;
+        workingStateValue *= 7;
         break;
         
         case ouchy_black:
-        workingStateValue += 20;
+        workingStateValue *= 20;
         break;
         
         case floaty:
-        workingStateValue += 2;
+        workingStateValue *= 2;
         break;
 
         case hot_hot_hot:
-        workingStateValue += 15;
+        workingStateValue *= 15;
         break;
         }
         return workingStateValue;
