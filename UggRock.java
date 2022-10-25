@@ -42,14 +42,13 @@ public class UggRock{
         this.rockType = newRockType;
     }
 
-    public int getStateValue (UggRockSize rockSize, UggRockType rockType) {
-        int workingStateValue = 1;
-        workingStateValue *= rockSize.getMultiplierValue().intValue() * rockType.getMultiplierValue().intValue();
+   public int CalcStateValue (UggRockSize rockSize, UggRockType rockType) {
+        int workingStateValue = rockSize.getMultiplierValue().intValue() * rockType.getMultiplierValue().intValue();
         return workingStateValue;
     }
 
     public int getVal (){
-        int value = getStateValue(rockSize, rockType);
+        int value = CalcStateValue(rockSize, rockType);
         return value; 
     }
 
@@ -64,7 +63,7 @@ public class UggRock{
     public String getRockDataAsStrings (){
         return (this.rockSize.toString() + ", " + this.rockType.toString());
     }
-    
+
 public static void main(String[] args){
     UggRock Terry = new UggRock (UggRockSize.bigun, UggRockType.hot_hot_hot);
     System.out.println(Terry.getVal());
