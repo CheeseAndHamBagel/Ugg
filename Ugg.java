@@ -133,6 +133,7 @@ public static void main(String[] args){
     for (int i = 0; i < 5; i++){
         Ugg.UggRock TestingRock = drawRock();
         System.out.println(TestingRock.getRockDataAsStrings());
+        // error here?
         switch (TestingRock.rockSize){
             case bigun:
                 bigunCount += 1;
