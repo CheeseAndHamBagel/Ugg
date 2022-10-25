@@ -1,3 +1,4 @@
+package UggRock;
 enum UggRockSize {
    // enum constants calling the enum constructors 
     bigun(Short.parseShort("5")),
@@ -11,7 +12,7 @@ enum UggRockSize {
       this.multiplierValue = multiplierValue;
    }
     public Short getMultiplierValue() {
-      return multiplierValue;
+        return multiplierValue;
    }
 }
 
