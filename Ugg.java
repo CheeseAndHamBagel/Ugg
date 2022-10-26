@@ -77,11 +77,12 @@ public class Ugg{
         double sizeValue = generator.nextDouble();
         double typeValue = generator.nextDouble();
         // debug prints to check values are returning randoms and generate expected types and sizes
-        System.out.println (sizeValue);
-        System.out.println (typeValue);
+        //System.out.println (sizeValue);
+        //System.out.println (typeValue);
         NestedUggRockSize.UggRockSize newUggRockSize;
         NestedUggRockType.UggRockType newUggRockType;
 
+        
         if (sizeValue < (0.111111)){
             newUggRockSize = NestedUggRockSize.UggRockSize.bigun;
         }
@@ -130,33 +131,41 @@ public static void main(String[] args){
     int speckilyCount = 0;
     int floatyCount = 0;
 
-    for (int i = 0; i < 5; i++){
+    for (int i = 0; i < 100000; i++){
         Ugg.UggRock TestingRock = drawRock();
-        System.out.println(TestingRock.getRockDataAsStrings());
-        // error here?
+        //System.out.println(TestingRock.getRockDataAsStrings());
         switch (TestingRock.rockSize){
             case bigun:
                 bigunCount += 1;
+                break;
             case quite_bigun:
-                bigunCount += 1;
+                quiteBigunCount += 1;
+                break;
             case not_so_bigun:
                 notSoBigunCount += 1;
+                break;
             default:
                 System.out.println("Rock has no size");
+                break;
         }
         switch (TestingRock.rockType){
             case ouchy_black:
                 ouchyBlackCount += 1;
+                break;
             case hot_hot_hot:
                 hotHotHotCount += 1;
+                break;
             case speckily:
                 speckilyCount += 1;
+                break;
             case floaty:
                 floatyCount += 1;
+                break;
             default:
                 System.out.println("Rock has no type");
+                break;
         }
-        System.out.println();
+        //System.out.println();
     }
     int sizeCount = bigunCount + quiteBigunCount + notSoBigunCount;
     int typeCount = ouchyBlackCount + hotHotHotCount + speckilyCount + floatyCount;
